@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#1a1a1a">
+  <title>Bodrum Elektrikçi - 7/24 Acil Elektrik Arıza Servisi | Gümüşlük Teknik</title>
+  <meta name="description" content="Bodrum elektrikçi ve 7/24 acil arıza servisi. Gümüşlük, Turgutreis, Yalıkavak, Ortakent, Bitez ve tüm Bodrum'da sigorta arızası, internet hattı çekme, EV şarj ve tesisat kurulumu.">
+  <link rel="canonical" href="https://gumuslukteknik.com/">
+  <link rel="icon" type="image/webp" href="./favicon.webp">
+
+  <!-- Akıllı GTM Yükleyici -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  window.gtmLoaded = false;
+
+  function loadGTM() {
+    if (window.gtmLoaded) return;
+    window.gtmLoaded = true;
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M84XWBTJ');
+  }
+
+  if (/gclid=|wbraid=|gbraid=/i.test(window.location.search)) {
+    loadGTM();
+  } else {
+    ['touchstart', 'mousemove', 'scroll', 'keydown', 'click'].forEach(function(evt) {
+      window.addEventListener(evt, loadGTM, { once: true, passive: true });
+    });
+    window.addEventListener('load', function() {
+      setTimeout(loadGTM, 3500);
+    });
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #ffcc00;
+      --background: #1a1a1a;
+      --surface: #242424;
+      --text-primary: #ffffff;
+      --text-muted: #bcbcbc;
+      --border: #333333;
+      --border-light: #444444;
+      --radius: 0.65rem;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--background); color: var(--text-primary); line-height: 1.6; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HEADER */
+    header { 
+      height: 76px; 
+      display: flex; 
+      align-items: center; 
+      background: #1a1a1a; 
+      position: sticky; 
+      width: 100%; 
+      z-index: 1000; 
+      top: 0; 
+      border-bottom: 1px solid var(--border); 
+    }
+
+    .header-content { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      width: 100%; 
+    }
+
+    .header-brand a { display: flex; align-items: center; text-decoration: none; }
+    .header-logo { height: 42px; width: auto; object-fit: contain; }
+
+    .phone-contact { display: flex; align-items: center; gap: 8px; }
+    .phone-icon { width: 22px; height: 22px; }
+    .phone-number a { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+
+    .lang-switcher { display: flex; gap: 6px; align-items: center; }
+    .lang-btn { background: none; border: none; color: #fff; cursor: pointer; font-weight: 600; }
+
+    /* HERO */
+    .hero { background: var(--background); min-height: 76vh; display: flex; align-items: center; position: relative; padding: 2.5rem 0; }
+    .hero-content { position: relative; z-index: 2; width: 100%; text-align: center; }
+    h1 { font-size: 2.25rem; line-height: 1.2; margin-bottom: 1rem; color: #fff; font-weight: 800; }
+    
+    .section { padding: 3.5rem 0; }
+    .text-center { text-align: center; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem; }
+    .service-card { background: var(--surface); border-radius: var(--radius); padding: 1.5rem; border: 1px solid var(--border); }
+    .service-card p { color: var(--text-muted); }
+    .service-card a { color: inherit; }
+    .btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: var(--radius); font-weight: 600; text-decoration: none; background: var(--primary); color: #000; }
+
+    #mainCtaBtn {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 2.4rem;
+      line-height: 1.2;
+    }
+
+    .btn-top-text { font-size: 0.9rem; font-weight: 600; }
+    .btn-phone-text { font-size: 1.5rem; font-weight: 800; margin-top: 4px; display: block; }
+
+    /* İLÇE LİNK GRİDİ */
+    .district-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 1.2rem;
+      padding: 10px 0;
+    }
+
+    .district-link {
+      display: inline-block;
+      padding: 10px 16px; 
+      background-color: #242424;
+      border: 1px solid #444;
+      border-radius: 8px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      min-width: 145px;
+      text-align: center;
+    }
+
+    /* REVIEWS & FAQ */
+    .reviews-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .review-card { background: var(--surface); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); }
+    .review-header { display: flex; justify-content: space-between; margin-bottom: 0.8rem; }
+    .reviewer-name { font-weight: 700; color: #fff; }
+    .star-rating { color: var(--primary); font-size: 0.9rem; }
+    .review-date { font-size: 0.8rem; color: var(--text-muted); }
+    .reviews-cta { text-align: center; margin-top: 2rem; }
+    .btn-outline { border: 1px solid var(--primary); color: var(--primary); background: transparent; }
+
+    /* FOOTER */
+    footer { background: #121212; padding: 3rem 0 1.5rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-top: 2rem; }
+    .footer-section h4 { color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem; }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li { margin-bottom: 0.5rem; }
+    .footer-section ul li a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; }
+    .footer-bottom { border-top: 1px solid #222; padding-top: 1.5rem; margin-top: 2rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+
+    /* MASAÜSTÜ SAĞ ALT YÜZEN WHATSAPP BUTONU */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+      z-index: 9998;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+
+    /* MOBİL SABİT ALT İLETİŞİM BARI */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background-color: #121212;
+      padding: 10px 15px;
+      border-top: 1px solid #333;
+      z-index: 9999;
+    }
+
+    .mobile-sticky-bar a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-call-sticky { background-color: var(--primary); color: #000; }
+    .btn-wa-sticky { background-color: #25d366; color: #fff; }
+
+    @media (max-width: 768px) {
+      body { padding-bottom: 70px; }
+      .hero { min-height: 78vh; padding: 2rem 0; }
+      h1 { font-size: 1.85rem; }
+      .btn-phone-text { font-size: 1.3rem; }
+      .district-link { flex: 1 1 42%; font-size: 0.85rem; padding: 14px 10px; }
+      .header-logo { height: 34px; }
+      .whatsapp-float { display: none !important; }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-sticky-bar { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M84XWBTJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="header-brand">
+          <a href="./">
+            <img src="./logo2x.webp" alt="Gümüşlük Teknik - Bodrum Elektrikçi Logo" class="header-logo" width="131" height="42" fetchpriority="high">
+          </a>
+        </div>
+
+        <div class="header-center">
+          <div class="phone-contact">
+            <svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div class="phone-number">
+              <a href="tel:05324962448">0532 496 24 48</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="tr">TR</button>
+          <span style="color: #444;">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 style="color: #ffffff;">Bodrum Elektrikçi - 7/24 Acil Elektrik Arıza Servisi</h1>
+            <p style="color: var(--text-muted); margin: 0 auto 1.75rem; max-width: 780px; font-size: 1.05rem;">
+              Bodrum, Gümüşlük, Turgutreis, Yalıkavak ve tüm yarımadada 20 yılı aşkın saha tecrübemizle sigorta ve kaçak akım arızaları, internet/Cat6 hat çekme, EV şarj istasyonu ve komple elektrik tesisatı hizmetleri sunuyoruz.
+            </p>
+            <a id="mainCtaBtn" href="tel:05324962448" class="btn btn-primary" aria-label="Gümüşlük Teknik'i Hemen Arayın">
+              <span class="btn-top-text">Hemen aramak için tıklayın</span>
+              <span class="btn-phone-text">0532 496 24 48</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Corporate Solutions -->
+    <section class="section" style="background-color: var(--background); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 2rem;">
+          <img src="assets/badge2.webp" alt="Yetkili Teknik Servis Belgesi" decoding="async" width="158" height="175">
+          <img src="assets/badge1.webp" alt="Garantili İşçilik Sertifikası" decoding="async" width="116" height="174">
+        </div>
+        <p class="text-center" style="color: var(--text-muted); max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1.1rem; line-height: 1.6;">Konutlar, villalar, zincir mağazalar ve otel işletmeleri için 20 yılı aşkın sektör tecrübemizle garantili, standartlara uygun ve kesintisiz elektrik çözümleri sağlıyoruz.</p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header text-center" style="margin-bottom: 2.5rem;">
+          <h2>Profesyonel Elektrik Hizmetlerimiz</h2>
+          <p style="color: var(--text-muted);">Bodrum genelinde ev, villa ve iş yerleriniz için hızlı teknik servis çözümleri</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-image">
+              <img src="assets/tools-banner.webp" alt="7/24 Acil Elektrik Arıza Servisi" loading="lazy" decoding="async" width="500" height="500" style="width:100%; height:auto; border-radius: var(--radius); margin-bottom:1rem;">
+            </div>
+            <div class="service-content">
+              <h3>7/24 Acil Elektrik Arıza</h3>
+              <p>Sigorta atması, kaçak akım rölesi arızaları, elektrik kesintisi ve kısa devre sorunlarında yerinde hızlı müdahale.</p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-image">
+              <img src="assets/sigorta.webp" alt="İnternet ve Cat6 Hat Çekme" loading="lazy" decoding="async" width="500" height="500" style="width:100%; height:auto; border-radius: var(--radius); margin-bottom:1rem;">
+            </div>
+            <div class="service-content">
+              <h3>İnternet & Cat6 Hat Çekme</h3>
+              <p>Villa, site ve dairelerde modem yer değişimi, bina içi internet kablosu yenileme, Cat6 data hattı çekme ve zayıf akım çözümleri.</p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-image">
+              <img src="assets/ev-charging.webp" alt="EV Şarj İstasyonu Kurulumu" loading="lazy" decoding="async" width="500" height="500" style="width:100%; height:auto; border-radius: var(--radius); margin-bottom:1rem;">
+            </div>
+            <div class="service-content">
+              <h3>EV Şarj İstasyonu (Wallbox)</h3>
+              <p>Tesla, BMW, BYD, Togg ve tüm elektrikli araçlar için ev ve iş yerlerinde güvenli şarj ünitesi ve besleme hattı kurulumu.</p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-image">
+              <img src="assets/lighting-installation.webp" alt="Aydınlatma Sistemleri ve Avize Montajı" loading="lazy" decoding="async" width="500" height="500" style="width:100%; height:auto; border-radius: var(--radius); margin-bottom:1rem;">
+            </div>
+            <div class="service-content">
+              <h3>Aydınlatma & Avize Montajı</h3>
+              <p>Avize, LED şerit, spot ve dış mekan bahçe aydınlatma sistemleri kurulumu, tamiri ve enerji tasarruflu çözümler.</p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-image">
+              <img src="assets/pool-maintenance.webp" alt="Havuz ve Hidrofor Elektrik Sistemleri" loading="lazy" decoding="async" width="500" height="500" style="width:100%; height:auto; border-radius: var(--radius); margin-bottom:1rem;">
+            </div>
+            <div class="service-content">
+              <h3>Havuz & Pano Sistemleri</h3>
+              <p>Havuz aydınlatma, pompa kumanda panoları, hidrofor bağlantıları ve sezon öncesi periyodik elektrik bakım hizmetleri.</p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <div class="service-image">
+              <img src="assets/security-system.webp" alt="Tesisat Kurulumu ve Topraklama" loading="lazy" decoding="async" width="500" height="500" style="width:100%; height:auto; border-radius: var(--radius); margin-bottom:1rem;">
+            </div>
+            <div class="service-content">
+              <h3>Tesisat & Topraklama Ölçümü</h3>
+              <p>Tadilat ve yeni yapılar için komple elektrik tesisatı kurulumu, güvenlik kamerası altyapısı ve raporlu topraklama testi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EV Charging Station Section -->
+    <section class="section" style="background-color: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <h2 class="text-center">Elektrikli Araç Şarj İstasyonu Kurulumu Hizmeti</h2>
+        <p class="text-center" style="color: var(--text-muted); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Evinizin önünde Tesla, BMW, Renault, BYD, Togg ve tüm elektrikli araçlarınızı güvenle şarj edebilmek için standartlara uygun EV şarj istasyonu kurulumu yapıyoruz.</p>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">1. Uygun Ekipman & Kablo Seçimi</h3>
+            <p>Evinize ve aracınıza uygun şarj ekipmanı (Wallbox) ve kesitte enerji kablosu belirlenir.</p>
+          </div>
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">2. Pano & Topraklama Kontrolü</h3>
+            <p>Mevcut elektrik panonuzun kapasitesi ve topraklama değerleri ölçülerek kaçak akım koruması planlanır.</p>
+          </div>
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">3. Güvenli Montaj & Devreye Alma</h3>
+            <p>Şarj ünitesi montajı tamamlanır, yük testleri yapılarak kullanıma hazır teslim edilir.</p>
+          </div>
+        </div>
+        
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="tel:05324962448" class="btn btn-primary">EV Şarj İstasyonu İçin Arayın</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background-color: var(--background); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <h2 class="text-center">Neden Gümüşlük Teknik Elektrik Hizmetlerini Seçmelisiniz?</h2>
+        <p class="text-center" style="color: var(--text-muted); margin-bottom: 3rem;">Bodrum ve Gümüşlük'te güven veren, 7/24 ulaşabileceğiniz tecrübeli teknik servisiniz.</p>
+        
+        <div class="services-grid">
+          <div class="service-card" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">⚡ 7/24 Kesintisiz Hizmet</h3>
+            <p>Acil durumlar için gece gündüz yanınızdayız. Elektrik arızalarınızda anında müdahale.</p>
+          </div>
+          <div class="service-card" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">🔧 Hızlı ve Güvenilir Çözümler</h3>
+            <p>Profesyonel ölçüm ve test cihazlarımızla arızanın kaynağını nokta atışı tespit edip çözüyoruz.</p>
+          </div>
+          <div class="service-card" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">📍 Yerel Uzmanlık</h3>
+            <p>Bodrum, Gümüşlük, Turgutreis ve tüm çevre bölgelere hakim, aynı gün hızlı erişim sağlıyoruz.</p>
+          </div>
+          <div class="service-card" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">✓ Garantili İşçilik</h3>
+            <p>Yapılan tüm elektrik ve tesisat işleri Gümüşlük Teknik garantisi altındadır.</p>
+          </div>
+          <div class="service-card" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">💰 Şeffaf Fiyatlandırma</h3>
+            <p>İşlem öncesinde net bilgi veren, sürprizsiz ve anlaşılır fiyat politikası uyguluyoruz.</p>
+          </div>
+          <div class="service-card" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">👨‍🔧 20+ Yıllık Saha Tecrübesi</h3>
+            <p>Konut, villa ve ticari tesisat projelerinde uzun yıllara dayanan mühendislik ve uygulama deneyimi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="section" style="background-color: var(--surface); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <h2 class="text-center">Hizmet Alanlarımız</h2>
+        <p class="text-center" style="color: var(--text-muted); margin-bottom: 2.5rem;">Bodrum'un her bölgesine hızlı ve güvenilir mobil elektrik servisi sunuyoruz.</p>
+        
+        <div class="services-grid">
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="gumusluk.html" style="color: var(--primary); text-decoration: none;">Gümüşlük Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="turgutreis.html" style="color: var(--primary); text-decoration: none;">Turgutreis Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="yalikavak.html" style="color: var(--primary); text-decoration: none;">Yalıkavak Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="turkbuku.html" style="color: var(--primary); text-decoration: none;">Türkbükü Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="bitez.html" style="color: var(--primary); text-decoration: none;">Bitez Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="gundogan.html" style="color: var(--primary); text-decoration: none;">Gündoğan Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="golkoy.html" style="color: var(--primary); text-decoration: none;">Gölköy Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="torba.html" style="color: var(--primary); text-decoration: none;">Torba Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="konacik.html" style="color: var(--primary); text-decoration: none;">Konacık Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="ortakent.html" style="color: var(--primary); text-decoration: none;">Ortakent Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="gumbet.html" style="color: var(--primary); text-decoration: none;">Gümbet Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="bodrum.html" style="color: var(--primary); text-decoration: none;">Bodrum Merkez Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="akyarlar.html" style="color: var(--primary); text-decoration: none;">Akyarlar Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="bagla.html" style="color: var(--primary); text-decoration: none;">Bağla Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="karaincir.html" style="color: var(--primary); text-decoration: none;">Karaincir Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="yaliciftlik.html" style="color: var(--primary); text-decoration: none;">Yalıçiftlik Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="derekoy.html" style="color: var(--primary); text-decoration: none;">Dereköy Elektrikçi</a></h3></div>
+          <div class="service-card text-center"><h3 style="color: var(--primary);"><a href="koyunbaba.html" style="color: var(--primary); text-decoration: none;">Koyunbaba Elektrikçi</a></h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">Müşteri Yorumları</h2>
+        <div class="reviews-container">
+          <div class="review-card">
+            <div class="review-header">
+              <div>
+                <div class="reviewer-name">Eray Yalnızlar</div>
+                <div class="star-rating">★★★★★ 5.0</div>
+              </div>
+              <div class="review-date">Google Yorumu</div>
+            </div>
+            <p class="review-text">"Bu sıcakta beni kırmayıp Hızır gibi yetiştiniz sektörde gördüğüm en dürüst güvenilir esnafsınız 😊🙏 …"</p>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-header">
+              <div>
+                <div class="reviewer-name">Dilek Ünal</div>
+                <div class="star-rating">★★★★★ 5.0</div>
+              </div>
+              <div class="review-date">Google Yorumu</div>
+            </div>
+            <p class="review-text">"Mahir beyi tasinmamin ertesinde, söz verenlerin gelmediği, işlerin cok karıştığı bir zamanda İnternet üzerinden buldum. Once hemen o gün keşfe geldi ve programladigimiz şekilde isleri özenle tamamladı. Yürekten teşekkür ediyoruz."</p>
+          </div>
+          
+          <div class="review-card">
+            <div class="review-header">
+              <div>
+                <div class="reviewer-name">Bedirhan Akyüz</div>
+                <div class="star-rating">★★★★★ 5.0</div>
+              </div>
+              <div class="review-date">Google Yorumu</div>
+            </div>
+            <p class="review-text">"çok tatlı bir insan, hiçbir ricamızı kırmadı. saate de önem veriyor. böyle bir ustayla bodrumda karşılaşmak bizi çok mutlu etti."</p>
+          </div>
+        </div>
+        
+        <div class="reviews-cta">
+          <a href="https://maps.app.goo.gl/n7FY3SddFyEBNkCD8" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Tüm Google Yorumlarını Görüntüle</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">Sık Sorulan Sorular</h2>
+        <div class="services-grid" style="margin-top: 2.5rem;">
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">Gümüşlük Teknik hangi bölgelere hizmet veriyor?</h3>
+            <p>Bodrum Merkez, Gümüşlük, Turgutreis, Yalıkavak, Ortakent, Bitez, Gündoğan, Türkbükü ve yarımadanın tüm mahallelerine 7/24 servis veriyoruz.</p>
+          </div>
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">Acil elektrik arızalarında ne kadar sürede geliyorsunuz?</h3>
+            <p>Acil durumlarda ortalama 30-45 dakika içinde adresinize ulaşıyoruz. Konum ve trafik durumuna göre süre değişebilir.</p>
+          </div>
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">İnternet kablosu ve Cat6 hat çekimi yapıyor musunuz?</h3>
+            <p>Evet, ev, villa ve sitelerde modem yer değişimi, bina içi internet hattı yenileme ve Cat6 kablo çekimi hizmeti veriyoruz.</p>
+          </div>
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">Elektrikli araç şarj istasyonu kurulumu ne kadar sürer?</h3>
+            <p>Standart bir EV şarj istasyonu kurulumu genellikle 4-6 saat arasında tamamlanır.</p>
+          </div>
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">Yaptığınız işler garantili mi?</h3>
+            <p>Evet, tüm elektrik ve tesisat işlerimiz Gümüşlük Teknik garantisi altındadır.</p>
+          </div>
+          <div class="service-card">
+            <h3 style="color: var(--primary); font-size: 1.2rem;">Fiyat teklifi nasıl alabilirim?</h3>
+            <p>0532 496 24 48 numaralı telefonumuzu arayarak veya WhatsApp üzerinden ihtiyacınızı ileterek hızlıca bilgi alabilirsiniz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="section" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <div class="container">
+        <div style="border-top: 1px solid var(--border-light); padding-top: 2.5rem; margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.9rem;">Bodrum Elektrikçi – 7/24 Profesyonel Elektrik Hizmetleri</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; max-width: 860px;">Bodrum ve tüm mahallelerinde güvenilir ve hızlı elektrik hizmetleri sunuyoruz. Turgutreis elektrikçi, Gümüşlük elektrikçi, Yalıkavak elektrikçi, Ortakent elektrikçi ve Bitez elektrikçi başta olmak üzere yarımadanın her noktasında aktif görev yapan mobil ekibimiz, sigorta atması, kaçak akım rölesi arızası, internet hattı çekme ve tesisat sorunlarına anında müdahale eder.</p>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-light); padding-top: 2.5rem; margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.9rem;">Bodrum'un Her Mahallesinde Yanınızdayız</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; max-width: 860px; margin-bottom: 1rem;">Bodrum merkez ve tüm bağlı yerleşim yerlerinde aktif servis ağımızla hizmetinizdeyiz:</p>
+          <ul style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.9; max-width: 860px; padding-left: 1.25rem; columns: 2; column-gap: 2rem; list-style: disc;">
+            <li><strong>Gümüşlük elektrikçi</strong> – Gümüşlük, Koyunbaba ve Çukurbük hattında yerel servis merkezi.</li>
+            <li><strong>Turgutreis elektrikçi</strong> – Turgutreis merkez, Bahçelievler ve Karabağ'da hızlı müdahale.</li>
+            <li><strong>Yalıkavak elektrikçi</strong> – Yalıkavak marina bölgesi, Gökçebel ve Tilkicik çevresinde servis.</li>
+            <li><strong>Akyarlar elektrikçi</strong> – Akyarlar, Karaincir ve Kemer mevkisinde kesintisiz hizmet.</li>
+            <li><strong>Ortakent & Yahşi elektrikçi</strong> – Konut, villa ve işletme elektrik tesisatı çözümleri.</li>
+            <li><strong>Bitez elektrikçi</strong> – Bitez sahil, Aktur ve bahçeli konutlarda hızlı teknik destek.</li>
+            <li><strong>Gündoğan elektrikçi</strong> – Gündoğan ve Küçükbük koyundaki villalarda uzman ekip.</li>
+            <li><strong>Türkbükü & Gölköy elektrikçi</strong> – Kuzey hattı site ve konutlarında periyodik bakım ve arıza.</li>
+            <li><strong>Gümbet & Bodrum Merkez elektrikçi</strong> – Çarşı, Marina ve otel işletmelerine 7/24 destek.</li>
+            <li><strong>Konacık & Torba elektrikçi</strong> – Sanayi, iş yeri ve konut bölgelerinde komple tesisat.</li>
+            <li><strong>Bağla & Dereköy elektrikçi</strong> – Taş ev ve site projelerinde arıza ve internet hattı çekimi.</li>
+            <li><strong>Yalıçiftlik elektrikçi</strong> – Doğu hattındaki konut ve tesislere randevulu ve acil servis.</li>
+          </ul>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-light); padding-top: 2.5rem; padding-bottom: 1rem;">
+          <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.9rem;">Topraklama Testi ve Toprak Ölçümü – Can Güvenliğiniz Önceliğimizdir</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; max-width: 860px; margin-bottom: 0.75rem;">Elektrik tesisatında en kritik güvenlik unsurlarından biri doğru topraklamadır. Ekibimiz; topraklama testi ve toprak direnci ölçümü hizmetlerini kalibreli ölçüm cihazlarıyla gerçekleştirir.</p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; max-width: 860px; margin-bottom: 0.75rem;">Bodrum topraklama testi hizmetlerimiz; yazlık konutlar, villalar, oteller ve ticari yapılar için TSE ve IEC standartlarına uygun şekilde raporlanır. Yabancı mülk sahipleri ve kurumsal firmalar için İngilizce earthing test raporu da düzenlenmektedir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">İletişim Bilgileri - 7/24 Bize Ulaşın</h2>
+        <p class="text-center" style="color: var(--text-muted); margin-bottom: 3rem;">Gümüşlük Teknik elektrik servisi için bizimle iletişime geçin</p>
+        
+        <div class="services-grid" style="max-width: 900px; margin: 2rem auto 0 auto;">
+          <div class="service-card text-center" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary);">📞 Telefon</h3>
+            <p><a href="tel:05324962448" style="font-size: 1.1rem; font-weight: 600; text-decoration: none;">0532 496 24 48</a></p>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">7/24 Hizmet - Acil Elektrik Arıza</p>
+          </div>
+          
+          <div class="service-card text-center" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary);">💬 WhatsApp</h3>
+            <p><a href="https://api.whatsapp.com/send?phone=905324962448&text=Merhaba,%20bilgi%20ve%20servis%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" style="font-size: 1.1rem; font-weight: 600; text-decoration: none;">WhatsApp ile Yazın</a></p>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Hızlı Yanıt</p>
+          </div>
+          
+          <div class="service-card text-center" style="background-color: var(--surface);">
+            <h3 style="color: var(--primary);">📍 Konum</h3>
+            <p><a href="https://maps.app.goo.gl/n7FY3SddFyEBNkCD8" target="_blank" rel="noopener noreferrer" style="font-size: 1.1rem; font-weight: 600; text-decoration: none;">Gümüşlük, Bodrum</a></p>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Tüm Bodrum Yarımadasına Hizmet</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Gümüşlük Teknik</h4>
+        <p style="color: var(--text-muted); line-height: 1.8;">Sigorta atması, kaçak akım arızaları, internet hattı çekme ve elektrik tesisatı kurulumunda Bodrum ve Gümüşlük bölgesinde hızlı ve garantili teknik servis hizmeti sunuyoruz.</p>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Hizmetlerimiz</h4>
+          <ul>
+            <li><a href="#services">7/24 Elektrik Arıza Servisi</a></li>
+            <li><a href="#services">İnternet & Cat6 Hat Çekme</a></li>
+            <li><a href="#services">EV Şarj İstasyonu Kurulumu</a></li>
+            <li><a href="#services">Elektrik Tesisat Kurulumu</a></li>
+            <li><a href="#services">Aydınlatma & Avize Montajı</a></li>
+            <li><a href="#services">Havuz & Pano Sistemleri</a></li>
+            <li><a href="#services">Topraklama Testi & Ölçümü</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Hizmet Alanlarımız</h4>
+          <div class="district-grid">
+            <a href="gumusluk.html" class="district-link">Gümüşlük Elektrikçi</a>
+            <a href="turgutreis.html" class="district-link">Turgutreis Elektrikçi</a>
+            <a href="yalikavak.html" class="district-link">Yalıkavak Elektrikçi</a>
+            <a href="turkbuku.html" class="district-link">Türkbükü Elektrikçi</a>
+            <a href="bitez.html" class="district-link">Bitez Elektrikçi</a>
+            <a href="gundogan.html" class="district-link">Gündoğan Elektrikçi</a>
+            <a href="golkoy.html" class="district-link">Gölköy Elektrikçi</a>
+            <a href="torba.html" class="district-link">Torba Elektrikçi</a>
+            <a href="konacik.html" class="district-link">Konacık Elektrikçi</a>
+            <a href="ortakent.html" class="district-link">Ortakent Elektrikçi</a>
+            <a href="gumbet.html" class="district-link">Gümbet Elektrikçi</a>
+            <a href="bodrum.html" class="district-link">Bodrum Merkez Elektrikçi</a>
+            <a href="akyarlar.html" class="district-link">Akyarlar Elektrikçi</a>
+            <a href="bagla.html" class="district-link">Bağla Elektrikçi</a>
+            <a href="karaincir.html" class="district-link">Karaincir Elektrikçi</a>
+            <a href="yaliciftlik.html" class="district-link">Yalıçiftlik Elektrikçi</a>
+            <a href="derekoy.html" class="district-link">Dereköy Elektrikçi</a>
+            <a href="koyunbaba.html" class="district-link">Koyunbaba Elektrikçi</a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>İletişim</h4>
+          <ul>
+            <li><a href="tel:05324962448">📞 0532 496 24 48</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=905324962448&text=Merhaba,%20bilgi%20ve%20servis%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></li>
+            <li><a href="https://maps.app.goo.gl/n7FY3SddFyEBNkCD8" target="_blank" rel="noopener noreferrer">📍 Konumumuz</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 - 2026 Gümüşlük Teknik. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MASAÜSTÜ YÜZEN WHATSAPP BUTONU -->
+  <a href="https://api.whatsapp.com/send?phone=905324962448&text=Merhaba,%20bilgi%20ve%20servis%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp ile İletişime Geçin">
+    <svg viewBox="0 0 32 32" width="32" height="32" fill="#ffffff">
+      <path d="M16 3C8.832 3 3 8.832 3 16c0 2.294.6 4.533 1.74 6.506L3 29l6.688-1.71A12.93 12.93 0 0 0 16 29c7.168 0 13-5.832 13-13S23.168 3 16 3zm7.584 18.422c-.318.896-1.854 1.716-2.562 1.822-.654.098-1.482.139-2.392-.15-.552-.175-1.26-.41-2.166-.8-3.812-1.646-6.302-5.484-6.492-5.738-.19-.254-1.55-2.062-1.55-3.934 0-1.872.98-2.792 1.328-3.172.348-.38.76-.476 1.014-.476.254 0 .506.002.728.013.234.012.548-.089.858.654.318.762 1.08 2.634 1.174 2.824.096.19.16.412.032.666-.126.254-.19.412-.38.634-.19.222-.4.496-.57.666-.19.19-.388.396-.166.776.222.38.986 1.626 2.118 2.634 1.454 1.296 2.68 1.698 3.06 1.888.38.19.602.158.824-.096.222-.254.95-1.11 1.204-1.49.254-.38.506-.318.854-.19.348.126 2.218 1.046 2.598 1.236.38.19.634.286.728.444.096.158.096.918-.222 1.814z"/>
+    </svg>
+  </a>
+
+  <!-- MOBİL SABİT ALT BARI -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:05324962448" class="btn-call-sticky">📞 HEMEN ARAYIN</a>
+    <a href="https://api.whatsapp.com/send?phone=905324962448&text=Merhaba,%20bilgi%20ve%20servis%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-wa-sticky">💬 WHATSAPP</a>
+  </div>
+
+  <!-- LocalBusiness / Electrician Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Electrician",
+    "name": "Gümüşlük Teknik - Bodrum Elektrikçi",
+    "url": "https://gumuslukteknik.com/",
+    "logo": "https://gumuslukteknik.com/logo2x.webp",
+    "telephone": "+905324962448",
+    "priceRange": "$$",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gümüşlük, Bodrum",
+      "addressRegion": "Muğla",
+      "addressCountry": "TR"
+    },
+    "areaServed": [
+      "Bodrum", "Gümüşlük", "Turgutreis", "Yalıkavak", "Ortakent", "Bitez",
+      "Gündoğan", "Türkbükü", "Gölköy", "Torba", "Konacık", "Gümbet",
+      "Akyarlar", "Bağla", "Karaincir", "Yalıçiftlik", "Dereköy", "Koyunbaba"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "45"
+    }
+  }
+  </script>
+
+  <script src="./assets/main.js" defer></script>
+</body>
+</html>
